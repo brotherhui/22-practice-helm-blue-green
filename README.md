@@ -5,6 +5,7 @@ blue green deployment for helm
 2. switch the color
 
 <code>
+    
     def svcswitch = 'poc-helloworld-svc-switch'
     def workspace = pwd()
     def currentcolor = 'none'
