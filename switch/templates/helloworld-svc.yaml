@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: poc-helloworld-svc-switch
+  labels:
+    app: poc-helloworld-svc
+    color: {{ .Values.color }}
+spec:
+  type: NodePort
+  ports:
+    # the port that this service should serve on. This port is only accessible from inside the kubernetes cluster
+  - port: 8080
+    # the port of the target pod that the service will route the traffic to
+    targetPort: 8080
+    # the external port expose on all kube nodes. This port is accessible from outside by using any node ip
+    #nodePort: 30001
+  # label keys and values that must match in order to receive traffic for this service
+  selector:
+    app:  poc-helloworld-template
+    color: {{ .Values.color }}
