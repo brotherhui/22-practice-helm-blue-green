@@ -4,6 +4,7 @@ blue green deployment for helm
 1. First deploy the helm chart
 2. switch the color
 
+<code>
     def svcswitch = 'poc-helloworld-svc-switch'
     def workspace = pwd()
     def currentcolor = 'none'
@@ -43,3 +44,4 @@ blue green deployment for helm
           sh "./current-color.sh ${svcswitch} ${namespace}"
         }
     }
+</code>
